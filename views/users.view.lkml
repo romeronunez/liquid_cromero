@@ -22,6 +22,12 @@ view: users {
     sql: ${TABLE}.age ;;
   }
 
+  dimension: order_history_button {
+    label: "Order History"
+    sql: ${TABLE}.id ;;
+    html: <a href="/explore/liquid_cromero/order_items?fields=order_items.order_item_id, users.first_name, users.last_name, users.id, order_items.order_item_count, order_items.total_revenue&f[users.id]={{ value }}"><button>Order History</button></a> ;;
+  }
+
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
